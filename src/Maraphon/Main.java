@@ -19,6 +19,7 @@ public class Main {
             }
         }
 
+
         for (Competitor c:competitors){
             c.info();
         }
