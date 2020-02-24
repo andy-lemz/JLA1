@@ -1,4 +1,4 @@
-package server;
+package Lesson7.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -47,6 +47,14 @@ public class Server {
     public void broadcastMsg(String msg){
         for (ClientHandler c: clients ) {
             c.sendMsg(msg);
+        }
+    }
+
+    public void sendPrivateMsg(String nick, String msg){
+        for (ClientHandler c: clients) {
+            if (c.getNick().equals(nick)) {
+                c.sendMsg(msg);
+            }
         }
     }
 
